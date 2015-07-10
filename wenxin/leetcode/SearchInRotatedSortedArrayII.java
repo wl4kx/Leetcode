@@ -34,14 +34,6 @@ Write a function to determine if a given target is in the array.
     	int start = 0;
     	int end = nums.length - 1;
     	
-    	if(start == end){
-    		if(nums[start] == target){
-    			return true;
-    		}else{
-    			return false;
-    		}    			
-    	}
-    	
     	while(start<=end){
     		
     		int middleIndex = (start + end)/2;
