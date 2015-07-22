@@ -1,6 +1,9 @@
 package wenxin.leetcode;
 
-
+/*
+ * problem 50.
+ * Implement pow(x, n).
+ */
 public class Pow {
 	public double power(double x, int n) {
 		if (n == 0)

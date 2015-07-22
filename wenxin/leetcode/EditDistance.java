@@ -23,9 +23,10 @@ b) Delete a character
 c) Replace a character
 	 */
 	public static void main(String[] args) {
-		String word1 = "ab";
-		String word2 = "b";
-		System.out.println(minDistance(word1, word2));
+		String word1 = "abb";
+		String word2 = "abb";
+		minDistance(word1, word2);
+		//System.out.println(minDistance(word1, word2));
 
 	}
 
@@ -74,6 +75,13 @@ c) Replace a character
 					
 				}
 			}
+		}
+		
+		for(int i=0;i<length1+1;i++){
+			for(int j =0;j< length2+1;j++){
+				System.out.print(dp[i][j]+", ");
+			}
+			System.out.println("");
 		}
 		
 		return dp[length1][length2];
