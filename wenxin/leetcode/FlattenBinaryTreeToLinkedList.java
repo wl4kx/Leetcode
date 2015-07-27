@@ -38,20 +38,21 @@ The flattened tree should look like:
              6
 	 */
 	public static void main(String[] args) {
+		FlattenBinaryTreeToLinkedList instance = new FlattenBinaryTreeToLinkedList();
 		TreeNode n1 = new TreeNode(2);
 		TreeNode n2 = new TreeNode(1);
 		TreeNode n3 = new TreeNode(3);
 		n1.left = n2;
 		n1.right = n3;
-		flatten(n1);
+		instance.flatten(n1);
 		System.out.println(n1.val);
 		System.out.println(n1.right.val);
 		System.out.println(n1.right.right.val);
 		//System.out.println(n1.right.right.val);
 
 	}
-	public static TreeNode newRoot;
-    public static void flatten(TreeNode root) {
+	public TreeNode newRoot;
+    public void flatten(TreeNode root) {
     	if(root==null){
     		return;
     	}
@@ -61,7 +62,7 @@ The flattened tree should look like:
        return;
     }
     
-    public static void traverse(TreeNode root){
+    public void traverse(TreeNode root){
     	TreeNode leftNode = null;
     	TreeNode rightNode = null;
     	if(root!=null){
@@ -80,8 +81,10 @@ The flattened tree should look like:
     	}
     }
     
+	
+	
     /*
-     * A BETTER WAY!!!!!!!!!!!!!!!!! USE RECURSION. IMPLEMENT LATER.
+     * Another WAY!!!!!!!!!!!!!!!!! USE RECURSION. Exceeds time limit!!!!.
      *
 1) Find a node N with a left child L;
 2) Find the rightmost descendant of L and call it RM;
@@ -90,4 +93,24 @@ The flattened tree should look like:
 5) RM.right = Aux
 6) Explore the right subtree of N recursively.
      */
+/*	public void flatten(TreeNode root) {
+		if(root==null)
+			return;
+		TreeNode aux = root.right;
+		if(root.left!=null){
+			findRightMostChild(root.left).right = aux;
+			root.right = root.left;
+		}
+		flatten(root.right);
+		
+	}
+	
+	public TreeNode findRightMostChild(TreeNode root){
+		if(root.right!=null)
+			return findRightMostChild(root.right);
+		if(root.left!=null)
+			return findRightMostChild(root.left);
+		return root;
+	}*/
+	
 }

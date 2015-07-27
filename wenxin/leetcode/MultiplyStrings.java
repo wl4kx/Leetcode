@@ -11,7 +11,8 @@ package wenxin.leetcode;
 public class MultiplyStrings {
 
 	/**
-	 * 43.Given two numbers represented as strings, return multiplication of the
+	 * problem 43.
+	 * Given two numbers represented as strings, return multiplication of the
 	 * numbers as a string.
 	 * 
 	 * Note: The numbers can be arbitrarily large and are non-negative.

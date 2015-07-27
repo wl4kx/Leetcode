@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+ * problem 46.
 Given a collection of numbers, return all possible permutations.
 
 For example,
@@ -12,10 +13,12 @@ For example,
  */
 public class Permutations {
 	public static void main(String[] args){
-		List<List<Integer>> r = permute(new int[] {1,2,3});
+		Permutations instance = new Permutations();
+		List<List<Integer>> r = instance.permute(new int[] {1,2,3});
 		System.out.print(r);
 	}
-    public static List<List<Integer>> permute(int[] num) {
+    public List<List<Integer>> permute(int[] num) {
+    	
     	int size= num.length ;
     	List<List<Integer>> result = new ArrayList<List<Integer>>();
     	List<List<Integer>> numLeft = new ArrayList<List<Integer>>();
@@ -53,4 +56,6 @@ public class Permutations {
 		return ret;
         
     }
+    
+    
 }

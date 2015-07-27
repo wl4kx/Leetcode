@@ -1,6 +1,6 @@
 package wenxin.leetcode;
 
-/*
+/* problem 34.
  * Given a sorted array of integers, find the starting and ending position of a given target value.
 
  Your algorithm's runtime complexity must be in the order of O(log n).

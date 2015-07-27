@@ -3,8 +3,6 @@
  */
 package wenxin.leetcode;
 
-import java.util.LinkedList;
-
 /**
  * @author liao.wenxin
  *
@@ -30,16 +28,21 @@ Given the below binary tree and sum = 22,
 return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
 	 */
 	public static void main(String[] args) {
+		
+		PathSum instance = new PathSum();
+		
 		TreeNode n1 = new TreeNode(1);
 		TreeNode n2 = new TreeNode(2);
 		n1.left = n2;
 		
-		System.out.println(hasPathSum(n1, 1));
+		System.out.println(instance.hasPathSum(n1, 3));
 
 	}
 
-    public static boolean hasPathSum(TreeNode root, int sum) {
-    	if(root==null){
+    public boolean hasPathSum(TreeNode root, int sum) {
+/*    	
+ * using loops to do DFS.
+ * if(root==null){
     		return false;
     	}
     	LinkedList<TreeNode> nodeList = new LinkedList<TreeNode>();
@@ -64,6 +67,26 @@ return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
     			sumList.add(aSum+aNode.right.val);
     		}
     	}
-    	return false;
+    	return false;*/
+    	
+    	/*
+    	 * using recursion to do DFS.
+    	 */  	
+    	return dfs(root, 0, sum);
+    	
+    }
+    
+    public boolean dfs(TreeNode root, int cSum, int sum){
+    	if(root==null){
+    		return false;
+    	}
+    	int newSum = root.val + cSum;
+    	if(root.left==null && root.right==null){
+    		 if (newSum==sum)
+    			 return true;
+    		 else
+    			 return false;
+    	}
+    	return dfs(root.left, newSum, sum) || dfs(root.right, newSum, sum); 
     }
 }

@@ -1,5 +1,11 @@
 package wenxin.leetcode;
 
+/*
+ * problem 69.
+ * Implement int sqrt(int x).
+
+Compute and return the square root of x.
+ */
 public class Sqrt {
     public static int sqrt(int x) {
     	long first = 0;

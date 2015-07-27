@@ -13,7 +13,8 @@ import java.util.List;
  */
 
 /*
- * The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
+ * problem 51.
+ * The n-queens puzzle is the problem of placing n queens on an nï¿½n chessboard such that no two queens attack each other.
 
 
 
@@ -42,7 +43,7 @@ public class NQueens {
 //		int[] solution = {2, 0, 3, 1};
 //		ArrayList<int[]> result = new ArrayList<int[]>();
 //		result.add(solution);
-		List<List<String>> transformed = solveNQueens(2);
+		List<List<String>> transformed = solveNQueens(4);
 
 		for(List<String> sample : transformed){
 			System.out.println(sample);

@@ -2,6 +2,12 @@ package wenxin.leetcode;
 
 import java.util.ArrayList;
 
+/*
+ * problem 29.
+ *  Divide two integers without using multiplication, division and mod operator.
+
+If it is overflow, return MAX_INT.
+ */
 public class DivideTwoIntegers{
 	/*
 	 *	Divide two integers without using multiplication, division and mod operator.

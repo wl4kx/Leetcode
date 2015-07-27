@@ -4,6 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/*
+ * problem 17.
+ * Given a digit string, return all possible letter combinations that the number could represent.
+
+A mapping of digit to letters (just like on the telephone buttons) is given below.
+
+
+
+Input:Digit string "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+ */
 public class LetterCombinationsOfAPhoneNumber{
 	
 	public static HashMap<String, ArrayList<String>> phoneKeys = new HashMap<String, ArrayList<String>>();

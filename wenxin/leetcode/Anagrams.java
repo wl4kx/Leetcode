@@ -6,11 +6,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 /*
+ * problem 49.
 Given an array of strings, return all groups of strings that are anagrams.
 
 Note: All inputs will be in lower-case.
  */
-
+/*
+ * How to solve:
+ * Anagram strings will be same after sort their characters.
+ */
 public class Anagrams {
     public List<String> anagrams(String[] strs) {
 
