@@ -27,13 +27,14 @@ import java.util.List;
 public class CombinationSum {
 	
 	public static void main(String[] args){
+		CombinationSum instance = new CombinationSum();
 		int[] candidates = {92,71,89,74,102,91,70,119,86,116,114,106,80,81,115,99,117,93,76,77,111,110,75,104,95,112,94,73};
 		int target =  310;
-		List<List<Integer>> result = combinationSum(candidates, target);
+		List<List<Integer>> result = instance.combinationSum(candidates, target);
 		return;
 	}
 	
-	public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+	public List<List<Integer>> combinationSum(int[] candidates, int target) {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		ArrayList<List<Integer>> process = new ArrayList<List<Integer>>();
 		ArrayList<Integer> sums = new ArrayList<Integer>();
@@ -44,7 +45,7 @@ public class CombinationSum {
 		return dfs(process, sums, pointers, candidates, target);
 	}
 	
-	public static List<List<Integer>> dfs(List<List<Integer>> process, List<Integer> sums, List<Integer> pointers,
+	public List<List<Integer>> dfs(List<List<Integer>> process, List<Integer> sums, List<Integer> pointers,
 			int[] candidates, int target) {
 		ArrayList<List<Integer>> result = new ArrayList<List<Integer>>();
 		while (process.size() > 0) {
