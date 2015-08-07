@@ -1,17 +1,16 @@
 package wenxin.test;
 
+import java.util.HashSet;
+
 public class Test {
 	public static void main(String[] args) {
-
-		int[] arr = {3, 7, 1, 11, 5};
-		int i=0, j = 4;
-		while(i<=j){
-			i++;
-			if(i==j){
-				System.out.println(arr[i]);
-			}
-			j--;
-		}
-		System.out.println(arr[i]);
+		
+		HashSet<Integer> modifiedInsps = new HashSet<Integer>();
+		modifiedInsps.add(1);
+		modifiedInsps.add(2);
+		//System.out.println(modifiedInsps.toString().replace("[", "").replace("]", ""));
+		StringBuilder sb = new StringBuilder("[1,2]");
+		sb.replace(sb.length()-1,sb.length(),","+3).append("]");
+		System.out.println(sb.toString());
 	}
 }

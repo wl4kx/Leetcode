@@ -21,5 +21,33 @@ public class ImplementStrStr {
 			}
 		}
 	}
+	
+	  public static void main(String[] args) {
+	      String a = "abbc";
+	      String b = "bc";
+	     System.out.println(strstr(a, b));
+	  }
+	  
+	  public static boolean strstr(String a, String b){
+	    
+	    for(int i=0;i<a.length()-b.length() +1 ;i++){
+	    	int n = i;
+	      for(int j=0;j<b.length();j++){
+	        
+	        if(a.charAt(n)!=b.charAt(j)){
+	          break;
+	        }else if(j==b.length()-1){
+	          return true;
+	        }else{
+	        	n++;	
+	        }
+	        
+	      }
+	      
+	    }
+	    
+	    return false;
+	    
+	  }
 
 }
