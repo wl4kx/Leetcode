@@ -1,22 +1,17 @@
 package wenxin.test;
 
-import java.util.HashSet;
-import java.util.LinkedHashMap;
+
+
 
 public class Test {
 	public static void main(String[] args) {
+		String str = "{\"northing\":11}";
+		//JSONObject jso = JSONObject.fromObject(str);
 		
-		HashSet<Integer> modifiedInsps = new HashSet<Integer>();
-		modifiedInsps.add(1);
-		modifiedInsps.add(2);
-		//System.out.println(modifiedInsps.toString().replace("[", "").replace("]", ""));
-		StringBuilder sb = new StringBuilder("[1,2]");
-		sb.replace(sb.length()-1,sb.length(),","+3).append("]");
-		System.out.println(sb.toString());
+		int i =2;
+		char c = (char) ('a' - 1 + i);
 		
-		LinkedHashMap<String, String> map  = new LinkedHashMap<String, String>();
-		map.put("-1", "");
-		System.out.println(map.get("-1"));
+		System.out.println(c);
 		
 	}
 }
