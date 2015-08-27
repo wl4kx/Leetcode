@@ -1,13 +1,7 @@
-/**
- * 
- */
 package wenxin.leetcode;
 
+import java.util.Stack;
 
-/**
- * @author liao.wenxin
- *
- */
 /*
  * Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
 
@@ -17,32 +11,50 @@ Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,
  */
 public class BinarySearchTreeIterator {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
-	class BSTIterator {
-
+	
+	public class BSTIterator {
+		Stack<TreeNode> st = new Stack<TreeNode>();
 	    public BSTIterator(TreeNode root) {
-	        
+	    	if(root!=null){
+		        TreeNode p = root;
+		        st.push(p);
+		        while(p.left!=null){
+		        	st.push(p.left);
+		        	p = p.left;
+		        }
+	    	}
+
 	    }
 
 	    /** @return whether we have a next smallest number */
 	    public boolean hasNext() {
-	        
+	        return !st.isEmpty();
 	    }
 
 	    /** @return the next smallest number */
 	    public int next() {
-	        
+	        TreeNode n = st.pop();
+	        int ret = n.val;
+	        if(n.right!=null){
+	        	st.push(n.right);
+	        	n = n.right;
+		        while(n.left!=null){
+		        	st.push(n.left);
+		        	n = n.left;
+		        }
+	        }
+	        return ret;
 	    }
 	}
-	/**
-	 * Your BSTIterator will be called like this:
-	 * BSTIterator i = new BSTIterator(root);
-	 * while (i.hasNext()) v[f()] = i.next();
-	 */
+    
+    /**
+     * Your BSTIterator will be called like this:
+     * BSTIterator i = new BSTIterator(root);
+     * while (i.hasNext()) v[f()] = i.next();
+     */
+
 }
