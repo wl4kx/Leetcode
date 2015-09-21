@@ -26,21 +26,21 @@ If nums = [1,2,3], a solution is:
 ]
  */
 public class Subsets {
-    public static List<List<Integer>> subsets(int[] S) {
-Arrays.sort(S);
-    	int length = S.length;
-    	List<List<Integer>> result = new ArrayList<List<Integer>>();
-    	result.add(new ArrayList<Integer>());
-    	for(int i=1;i<=length;i++){
-    		result.addAll(combine(S, i));
-    	}
-    	
-    	
-    	
-    	
+	/*
+	 * use code from combination
+	 */
+	public static List<List<Integer>> subsets(int[] S) {
+		Arrays.sort(S);
+		int length = S.length;
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		result.add(new ArrayList<Integer>());
+		for (int i = 1; i <= length; i++) {
+			result.addAll(combine(S, i));
+		}
+
 		return result;
-        
-    }
+
+	}
     
     public static ArrayList<ArrayList<Integer>> combine(int[] S, int k) {
     	int currentPos = 0;

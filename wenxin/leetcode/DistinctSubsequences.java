@@ -25,7 +25,7 @@ public class DistinctSubsequences {
 	 */
 	public static void main(String[] args) {
 		DistinctSubsequences instance = new DistinctSubsequences();
-		System.out.println(instance.numDistinct("aaaa","aa"));
+		System.out.println(instance.numDistinct("aaa","aa"));
 
 	}
 

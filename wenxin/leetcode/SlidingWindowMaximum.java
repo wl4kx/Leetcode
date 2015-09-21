@@ -41,12 +41,46 @@ public class SlidingWindowMaximum {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		SlidingWindowMaximum instance = new SlidingWindowMaximum();
+		int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+		int[] result = instance.maxSlidingWindow(nums, 3);
+		for (int i = 0; i < result.length; i++) {
+			System.out.print(result[i]+" ");
+		}
 
 	}
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         
+    	int maxIndex = 0;
+    	int secondIndex = 0;
+    	
+    	int[] indices = new int[nums.length-k+1];
+    	
+    	for (int i = 0; i < k; i++) {
+			if(nums[i]>nums[maxIndex]){
+				maxIndex = i;
+				indices[0] = i;
+			}else if(nums[i]>nums[secondIndex]){
+				secondIndex = nums[i];
+			}
+		}
+    	
+    	for (int i = k; i < nums.length; i++) {
+    		if(i-k==maxIndex){
+    			//maxIndex is out of window.
+    			
+    		}else{
+    			if(nums[i]>nums[maxIndex]){
+    				secondIndex = maxIndex;
+    				maxIndex = i;
+    			}else{
+    				
+    			}
+    		}
+		}
+    	
+    	
     }
     
 }
