@@ -80,7 +80,7 @@ public class SlidingWindowMaximum {
     		}
 		}
     	
-    	
+    	return new int[1];
     }
     
 }
