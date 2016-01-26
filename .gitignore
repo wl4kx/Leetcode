@@ -1,2 +1,7 @@
 *.class
-.settings/
+java/.settings/
+cplusplus/.vs/
+cplusplus/Debug/
+cplusplus/cplusplus/Debug/
+cplusplus/x64/
+cplusplus/cplusplus.VC.opendb
