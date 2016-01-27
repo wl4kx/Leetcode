@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-class Solution {
+class TwoSum {
 public:
 	vector<int> twoSum(vector<int>& nums, int target) {
 		vector<int> ret(2, 0);
@@ -28,12 +28,12 @@ public:
 	}
 };
 
-int main() {
-
-	Solution s;
-	vector<int> numbers = { 2, 7, 11, 15 };
-	int target = 9;
-	vector<int> result = s.twoSum(numbers, target);
-	cout << result[0] << ", "<< result[1] << endl;
-	system("pause");
-}
+//int main() {
+//
+//	TwoSum s;
+//	vector<int> numbers = { 2, 7, 11, 15 };
+//	int target = 9;
+//	vector<int> result = s.twoSum(numbers, target);
+//	cout << result[0] << ", "<< result[1] << endl;
+//	system("pause");
+//}
