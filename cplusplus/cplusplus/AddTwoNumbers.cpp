@@ -16,16 +16,16 @@ public:
 		int carry = 0;
 		ListNode *pointer = head;
 		while (l1 != NULL || l2 != NULL) {
-			int n1 = 0, n2 = 0;
+			int sum = 0;
 			if (l1 != NULL) {
-				n1 = l1->val;
+				sum += l1->val;
 				l1 = l1->next;
 			}
 			if (l2 != NULL) {
-				n2 = l2->val;
+				sum += l2->val;
 				l2 = l2->next;
 			}
-			int sum = n1 + n2 + carry;
+			sum += carry;
 			if (sum > 9) {
 				carry = 1;
 				sum -= 10;
