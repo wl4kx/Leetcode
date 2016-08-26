@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @author liao.wenxin
  *
  */
-public class TwoSum {
+public class TwoSum_ {
 
 	/**
 	 * @param args
@@ -27,32 +27,26 @@ Output: index1=1, index2=2
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] numbers = {2, 7, 11, 15};
-		int[] result = twoSum(numbers, 9);
+		int[] numbers = {3, 2, 4};
+		int[] result = twoSum(numbers, 6);
 		System.out.println(result[0]+" "+ result[1]);
 	}
 	
 	public static int[] twoSum(int[] nums, int target) {
-		// use map. time complexity is O(n).
-
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		int[] result = new int[2];
-		for (int i = 0; i < nums.length; i++) {
-			int v = nums[i];
-			int want = target - v;
-			if (map.containsKey(want)) {
-				if (i + 1 > map.get(want)) {
-					result[1] = i + 1;
-					result[0] = map.get(want) + 1;
-				} else {
-					result[0] = i + 1;
-					result[1] = map.get(want) + 1;
-				}
-
-				return result;
+		int[] ret = new int[2];
+		//nums length must >= 2
+		HashMap<Integer, Integer> map = new HashMap<>();
+		map.put(target - nums[0], 0);
+		for(int i = 1; i<nums.length;i++){
+			if(map.containsKey(nums[i])){
+				//found
+				ret[0] = map.get(nums[i]);
+				ret[1] = i;
+				return ret;
+			}else{
+				map.put(target - nums[i], i);
 			}
-			map.put(v, i);
 		}
-		return result;
+		return null;
 	}
 }
